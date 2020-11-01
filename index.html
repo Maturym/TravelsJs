@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Travels & Tours</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+  <script
+  src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+  <script>
+    $(document).ready(function(){
+      $('.header-form__submenu-link--default').click(function(){
+        $(this).parent().toggleClass('active');
+        $(this).css( 'margin-bottom', '10px');
+      });
+      $('.header-form__submenu-link').click(function(){
+        var currentele = $(this).html();
+        var parent = $(this).parent();
+        parent.children('.header-form__submenu-link--default').html(currentele);
+        $(this).parent().removeClass('active');
+        $('.header-form__submenu-link--default').css( 'margin-bottom', '0px');
+      })
+
+    });
+  </script>
+</head>
+<body>
+  <main class="main">
+    <header>
+      <div class="header-container">
+        <div class="header__top header-top">
+          <a href="#"><img src="img/logo.svg" alt="logo" class="header-top__logo"></a>
+          <div class="header-top__nav header-nav">
+            <a href="#" class="header-nav__link header-nav__link--active">Home</a>
+            <a href="#" class="header-nav__link">Destinations</a>
+            <a href="#" class="header-nav__link">About</a>
+            <a href="#" class="header-nav__link">Partner</a>
+          </div>
+          <div class="header-top__auth header-auth">
+            <button class="button header-auth__button header-auth__button--login">Login</button>
+            <button class="button header-auth__button header-auth__button--register">Register</button>
+          </div>
+        </div>
+        <!-- end of header-top -->
+        <div class="header__section header-section">
+          <div class="header-section-container">
+            <h1 class="header-section__title">Explore and</br> Travel</h1>
+            <div class="header-section__select header-select">
+              <h2 class="header-select__title">Holiday finder</h2>
+              <div class="header-select-line"></div>
+              <form action="get" class="header-select__form header-form">
+                <ul class="header-form__menu">
+                  <li class="header-form__submenu-link--default">Location</li>
+                  <li class="header-form__submenu-link header-form__submenu-link--1el">Africa</li>
+                  <li class="header-form__submenu-link header-form__submenu-link--2el">Asia</li>
+                  <li class="header-form__submenu-link header-form__submenu-link--3el">Europe</li>
+                  <li class="header-form__submenu-link header-form__submenu-link--4el">Australia</li>
+                  <li class="header-form__submenu-link header-form__submenu-link--5el">America</li>
+                </ul>
+                <!-- first select -->
+
+                <ul class="header-form__menu">
+                  <li class="header-form__submenu-link--default">Activity</li>
+                  <li class="header-form__submenu-link header-form__submenu-link--1ea">Skiing</li>
+                  <li class="header-form__submenu-link header-form__submenu-link--2ea">Mountain-climbing</li>
+                  <li class="header-form__submenu-link header-form__submenu-link--3ea">Swimming</li>
+                  <li class="header-form__submenu-link header-form__submenu-link--4ea">Sightseeing</li>
+                  <li class="header-form__submenu-link header-form__submenu-link--5ea">Relaxing</li>
+                </ul>
+                <!-- second select -->
+                <ul class="header-form__menu">
+                  <li class="header-form__submenu-link--default">Grade</li>
+                  <li class="header-form__submenu-link header-form__submenu-link--1eg">Easy</li>
+                  <li class="header-form__submenu-link header-form__submenu-link--2eg">Medium</li>
+                  <li class="header-form__submenu-link header-form__submenu-link--3eg">Hard</li>
+                </ul>
+                <!-- third select -->
+                <ul class="header-form__menu">
+                  <li class="header-form__submenu-link--default">Date</li>
+                  <li class="header-form__submenu-link">
+                    <input type="date" name="calendar" value="2020-10-31"
+                    max="2030-10-31" min="2020-10-01">
+                  </li>
+                </ul>
+              </form>
+              <button class="button header-select__button">Explore</button>              
+            </div>
+            <img src="img/header-bg.png" alt="header-background" class="header-section__bg">
+            <img src="img/круг в центре.svg" alt="" class="header-section__circle--center">
+            <img src="img/круг слева.svg" alt="" class="header-section__circle--left">
+            <img src="img/крест.svg" alt="" class="header-section__circle--crest">
+          </div>
+        </div>
+        <!-- end of header-section -->
+      </div>
+    </header>
+      <!-- end of header -->
+  </main>
+  
+</body>
+</html>
