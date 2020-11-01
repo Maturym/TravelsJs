@@ -7,24 +7,66 @@
   <link rel="stylesheet" href="css/style.css">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Mulish:wght@300&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/swiper-bundle.min.css" type="text/css">
   <script
   src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
   <script>
     $(document).ready(function(){
       $('.header-form__submenu-link--default').click(function(){
         $(this).parent().toggleClass('active');
-        $(this).css( 'margin-bottom', '10px');
       });
       $('.header-form__submenu-link').click(function(){
         var currentele = $(this).html();
         var parent = $(this).parent();
         parent.children('.header-form__submenu-link--default').html(currentele);
         $(this).parent().removeClass('active');
-        $('.header-form__submenu-link--default').css( 'margin-bottom', '0px');
       })
 
     });
   </script>
+  <!-- DropDown menu -->
+  <script>
+    $(document).ready(function(){
+      $('.report-card--next').click(function(){
+        $(".report-card--first ").fadeOut(1000, function() {
+          $(".report-card--second ").fadeIn(1000);
+          $(".report-card--second ").css('display', 'flex');
+        }); 
+
+        $('.report-card--next').css('opacity','0.5');
+        $('.report-card--prev').css('opacity','1') ;
+        // $(".report-card--second ").toggleClass('hidden');
+        // $(".report-card--first ").toggleClass('hidden');        
+      });
+      $('.report-card--prev').click(function(){
+        // $(".report-card--first ").toggleClass('hidden');
+        // $(".report-card--second ").toggleClass('hidden'); 
+
+        $(".report-card--second ").fadeOut(1000, function() {
+          $(".report-card--first ").fadeIn(1000);
+          $(".report-card--first ").css('display', 'flex');
+        });  
+
+        $('.report-card--next').css('opacity','1') ;
+        $('.report-card--prev').css('opacity','0.5')     
+      });
+    });
+
+  </script>
+  <!-- <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+
+  <script>
+    var swiper = new Swiper('.swiper-wrapper', {
+      spaceBetween: 30,
+      effect: 'fade',
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+      },
+    });
+  </script> -->
+  <!-- swiper -->
 </head>
 <body>
   <main class="main">
@@ -86,17 +128,156 @@
                 </ul>
               </form>
               <button class="button header-select__button">Explore</button>              
-            </div>
-            <img src="img/header-bg.png" alt="header-background" class="header-section__bg">
-            <img src="img/круг в центре.svg" alt="" class="header-section__circle--center">
-            <img src="img/круг слева.svg" alt="" class="header-section__circle--left">
-            <img src="img/крест.svg" alt="" class="header-section__circle--crest">
           </div>
         </div>
         <!-- end of header-section -->
+        <img src="img/header-bg.png" alt="header-background" class="header-section__bg">
+        <img src="img/круг в центре.svg" alt="" class="header-section__circle--center">
+        <img src="img/круг слева.svg" alt="" class="header-section__circle--left">
+        <img src="img/крест.svg" alt="" class="header-section__circle--crest">
       </div>
     </header>
       <!-- end of header -->
+    <section class="section1">
+      <img src="img/section-1 bg.png" alt="bg" class="section1__bg">
+      <img src="img/крест.svg" alt="" class="section1__crest">
+      <img src="img/круг в центре.svg" alt="" class="section1__circle--small">
+      <div class="section1__block section1-block">
+       <h1 class="section1__title">A new way to explore the world </h1>
+        <p class="section1__description">For decades travellers have reached for Lonely Planet books when looking to plan and execute their perfect 
+            trip, but now, they can also let Lonely Planet Experiences lead the way</p>
+        <button class="section1__button">Learn more</button>
+      </div>
+    </section>
+    <!-- end of section1 -->
+    <section class="section2">
+      <img src="img/круг в центре.svg" alt="" class="section2__circle--top">
+      <img src="img/круг в центре.svg" alt="" class="section2__circle--bot">
+      <img src="img/крест.svg" alt="" class="section2__crest">
+      <div class="section2-container">
+        <div class="section2__top">
+          <h1 class="section2__title">Featured destinations</h1>
+          <a href="#" class="section2__show">View all</a>
+        </div>
+        <div class="section2__cards">
+          <a href="#" class="section2__card--link">
+            <div class="section2__card">
+              <div class="section2__card--descr">
+                <h4 class="section2__card--name">Raja Ampat</h4>
+                <h5 class="section2__card--country">Indonesia</h5>
+              </div>
+            </div>
+          </a>
+          <!-- first card -->
+          <a href="#" class="section2__card--link">
+            <div class="section2__card section2__card--2el">
+              <div class="section2__card--descr">
+                <h4 class="section2__card--name">Fanjingshan</h4>
+                <h5 class="section2__card--country">China</h5>
+              </div>
+            </div>
+          </a>
+          <!-- 2nd card -->
+          <a href="#" class="section2__card--link">
+            <div class="section2__card section2__card--3el">
+              <div class="section2__card--descr">
+                <h4 class="section2__card--name">Vevey</h4>
+                <h5 class="section2__card--country">Switzerland</h5>
+              </div>
+            </div>
+          </a>
+          <!-- 3rd card -->
+          <a href="#" class="section2__card--link">
+            <div class="section2__card section2__card--4el">
+              <div class="section2__card--descr">
+                <h4 class="section2__card--name">Skadar</h4>
+                <h5 class="section2__card--country">Montenegro</h5>
+              </div>
+            </div>
+          </a>
+          <!-- 4th card -->
+        </div>
+      </div>
+    </section>
+    <!-- end of section 2 -->
+    <section class="section3">
+      <img src="img/section3 -bg.png" alt="bg" class="section3__bg">
+      <img src="img/крест.svg" alt="" class="section3__crest--top">
+      <img src="img/крест.svg" alt="" class="section3__crest--bot">
+      <img src="img/круг в центре.svg" alt="" class="section3__circle">
+      <div class="section3__block section3-block">
+       <h1 class="section3__title">Guides by Thousand Sunny </h1>
+        <p class="section3__description">Packed with tips and advice from our on-the-ground experts, our city guides app (iOS and Android) 
+          is the ultimate resource before and during a trip.</p>
+        <button class="section3__button">Download</button>
+      </div>
+    </section>
+    <!-- end of section3 -->
+    <section class="section4">
+      <img src="img/круг в центре.svg" alt="" class="section4__circle--left">
+      <div class="section4-wrapper">
+        <h1 class="report__title">Testimonials</h1>
+
+          <div class="report__cards">
+
+            <div class="report__card report-card--first">
+              <div class="report-card__text">
+                <div class="report-card__stars">
+                  <a href="#" class="report-card__star"><img src="img/section4/star.svg" alt=""></a>
+                  <a href="#" class="report-card__star"><img src="img/section4/star.svg" alt=""></a>
+                  <a href="#" class="report-card__star"><img src="img/section4/star.svg" alt=""></a>
+                  <a href="#" class="report-card__star"><img src="img/section4/star.svg" alt=""></a>
+                  <a href="#" class="report-card__star"><img src="img/section4/star.svg" alt=""></a>
+                </div>
+                <p class="report-card__descr">“Quisque in lacus a urna fermentum euismod. 
+                  Integer mi nibh, dapibus ac scelerisque eu, facilisis quis purus. Morbi blandit sit amet turpis nec”
+                </p>
+                <h3 class="report-card__name">Edward Newgate</h3>
+                <h4 class="report-card__status">Founder Circle</h4>
+              </div>
+              <div class="report-card__block">
+                <img src="img/section4/section4 photo.png" alt="" class="report-card-photo">
+                <img src="img/круг слева.svg" alt="" class="section4__circle--right">
+                <img src="img/крест.svg" alt="" class="section4__crest">
+                <div class="report-card__slider">
+                  <img src="img/section4/prev(not active).svg" alt="" class="report-card__slide report-card--prev">
+                  <img src="img/section4/next.svg" alt="" class="report-card__slide report-card--next">
+                </div>
+              </div>          
+            </div>
+            <!-- 1st slide end -->
+
+            <div class="report__card report-card--second hidden">
+              <div class="report-card__text">
+                <div class="report-card__stars">
+                  <a href="#" class="report-card__star"><img src="img/section4/star.svg" alt=""></a>
+                  <a href="#" class="report-card__star"><img src="img/section4/star.svg" alt=""></a>
+                  <a href="#" class="report-card__star"><img src="img/section4/star.svg" alt=""></a>
+                </div>
+                <p class="report-card__descr">“Quisque in lacus a urna fermentum euismod. 
+                  Integer mi nibh, dapibus ac scelerisque eu, facilisis quis purus. Morbi blandit sit amet turpis nec.
+                  Quisque in lacus a urna fermentum euismod. 
+                  Integer mi nibh, dapibus ac scelerisque eu, facilisis quis purus. Morbi blandit sit amet turpis nec.
+                  Quisque in lacus a urna fermentum euismod. 
+                  Integer mi nibh, dapibus ac scelerisque eu, facilisis quis purus. Morbi blandit sit amet turpis nec”
+                </p>
+                <h3 class="report-card__name">Jack Barbosso</h3>
+                <h4 class="report-card__status">Captian Sparrow</h4>
+              </div>
+              <div class="report-card__block">
+                <img src="img/section4/Джек.jpg" alt="" class="report-card-photo">
+                <img src="img/круг слева.svg" alt="" class="section4__circle--right">
+                <img src="img/крест.svg" alt="" class="section4__crest">
+                <div class="report-card__slider">
+                  <img src="img/section4/prev(not active).svg" alt="" class="report-card__slide report-card--prev">
+                  <img src="img/section4/next.svg" alt="" class="report-card__slide report-card--next">
+                </div>  
+              </div>        
+            </div>
+            <!-- 2nd slide end -->          
+        </div>
+      </div>
+    </section>
   </main>
   
 </body>
