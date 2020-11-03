@@ -10,46 +10,72 @@
   <link href="https://fonts.googleapis.com/css2?family=Mulish:wght@300&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/swiper-bundle.min.css" type="text/css">
   <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+  
   <script>
-    $(document).ready(function(){
+    $(document).ready(function(e){
+
       $('.header-form__submenu-link--default').click(function(){
         $(this).parent().toggleClass('active');
+        activeMenu = $(this).parent();
+
+        $(document).mouseup(function (e){ // событие клика по веб-документу
+          var div = activeMenu;// тут указываем ID элемента
+		      if (!div.is(e.target) // если клик был не по нашему блоку
+		        && div.has(e.target).length === 0) { // и не по его дочерним элементам
+			        activeMenu.removeClass('active')// скрываем его
+		   }
       });
+
       $('.header-form__submenu-link').click(function(){
         var currentele = $(this).html();
         var parent = $(this).parent();
         parent.children('.header-form__submenu-link--default').html(currentele);
         $(this).parent().removeClass('active');
-      })
+      });
+
+	});
 
     });
   </script>
   <!-- DropDown menu -->
   <script>
     $(document).ready(function(){
-      $('.report-card--next').click(function(){
-        $(".report-card--first ").fadeOut(1000, function() {
-          $(".report-card--second ").fadeIn(1000);
-          $(".report-card--second ").css('display', 'flex');
-        }); 
 
-        $('.report-card--next').css('opacity','0.5');
-        $('.report-card--prev').css('opacity','1') ;
-        // $(".report-card--second ").toggleClass('hidden');
-        // $(".report-card--first ").toggleClass('hidden');        
+      var lastChild = $('.report__cards').children().last();
+      var firstChild = $('.report__cards').children().first();
+
+      $('.report-card--next').click(function() {
+        $('.current').fadeToggle(1000, function(){
+          if (!lastChild.hasClass('current')){
+            $(this).next().fadeToggle(1000);
+            $(this).next().css('display', 'flex');
+            $(this).removeClass('current');
+            $(this).next().addClass('current');
+          } else {
+            firstChild.fadeToggle(1000);
+            firstChild.css('display', 'flex');
+            $(this).removeClass('current');
+            firstChild.addClass('current');
+          }
+        });
       });
+        
       $('.report-card--prev').click(function(){
-        // $(".report-card--first ").toggleClass('hidden');
-        // $(".report-card--second ").toggleClass('hidden'); 
-
-        $(".report-card--second ").fadeOut(1000, function() {
-          $(".report-card--first ").fadeIn(1000);
-          $(".report-card--first ").css('display', 'flex');
-        });  
-
-        $('.report-card--next').css('opacity','1') ;
-        $('.report-card--prev').css('opacity','0.5')     
+        $('.current').fadeToggle(1000, function(){
+          if (!firstChild.hasClass('current')) {
+            $(this).prev().fadeToggle(1000);
+            $(this).prev().css('display', 'flex');
+            $(this).removeClass('current');
+            $(this).prev().addClass('current');
+          } else {
+            lastChild.fadeToggle(1000);
+            lastChild.css('display', 'flex');
+            $(this).removeClass('current');
+            lastChild.addClass('current');
+          }
+        });
       });
+        
     });
 
   </script>
@@ -57,10 +83,12 @@
   <script>
     $(document).ready(function(){
       $('.header-burger').click(function(){
-        $('.burger-modal').addClass('active');
+        $('.main').fadeToggle(1000);
+        $('.burger-modal').show(1000);
       });
       $('.close').click(function(){
-        $('.burger-modal').removeClass('active');
+        $('.main').fadeToggle(1000);
+        $('.burger-modal').hide(1000);
       })
     })
   </script>
@@ -79,15 +107,17 @@
   <!-- swiper -->
 </head>
 <body>
+  <div class="burger-modal hidden">
+    <div class="burger-modal__container">
+      <a href="#" class="burger-modal__link">Home</a>
+      <a href="#" class="burger-modal__link">Destinations</a>
+      <a href="#" class="burger-modal__link">About</a>
+      <a href="#" class="burger-modal__link">Partner</a>
+      <a href="#"><img src="img/close.svg" alt="" class="close"></a>
+    </div>
+  </div>
   <main class="main">
     <header>
-      <div class="burger-modal ">
-        <a href="#" class="burger-modal__link">Home</a>
-        <a href="#" class="burger-modal__link">Destinations</a>
-        <a href="#" class="burger-modal__link">About</a>
-        <a href="#" class="burger-modal__link">Partner</a>
-        <a href="#"><img src="img/close.svg" alt="" class="close"></a>
-      </div>
       <div class="header-container">
         <div class="header__top header-top">
           <a href="#"><img src="img/logo.svg" alt="logo" class="header-top__logo"></a>
@@ -238,7 +268,7 @@
 
           <div class="report__cards">
 
-            <div class="report__card report-card--first">
+            <div class="report__card report-card--first current">
               <div class="report-card__text">
                 <div class="report-card__stars">
                   <a href="#" class="report-card__star"><img src="img/section4/star.svg" alt=""></a>
@@ -292,7 +322,30 @@
                 </div>  
               </div>        
             </div>
-            <!-- 2nd slide end -->          
+            <!-- 2nd slide end -->    
+            
+            <div class="report__card report-card--third hidden">
+              <div class="report-card__text">
+                <div class="report-card__stars">
+                  <a href="#" class="report-card__star"><img src="img/section4/star.svg" alt=""></a>
+                </div>
+                <p class="report-card__descr">“If I remember the night when we met, tasted the wine, that I'll never forget
+                  Opened the doorway and saw through th lights: motions and movements, tonight felt delight”
+                </p>
+                <h3 class="report-card__name">Sam Hamburger</h3>
+                <h4 class="report-card__status">SEO of SpaceX</h4>
+              </div>
+              <div class="report-card__block">
+                <img src="img/section4/zombie-business-man.jpg" alt="" class="report-card-photo">
+                <img src="img/круг слева.svg" alt="" class="section4__circle--right">
+                <img src="img/крест.svg" alt="" class="section4__crest">
+                <div class="report-card__slider">
+                  <img src="img/section4/prev(not active).svg" alt="" class="report-card__slide report-card--prev">
+                  <img src="img/section4/next.svg" alt="" class="report-card__slide report-card--next">
+                </div>  
+              </div>        
+            </div>
+            <!-- 3rd slide end -->   
         </div>
       </div>
     </section>
@@ -412,6 +465,7 @@
       </div>
     </footer>
   </main>
+  <script src="/js/main.js"></script>
   
 </body>
 </html>

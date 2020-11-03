@@ -1115,37 +1115,45 @@ footer{
   padding-left: 35px;
 }
 /* end of footer */
-.burger-modal{
-  position: absolute;
+.burger-modal__container{
+  position: fixed;
   top: 0;
   left: 0;
   background-color: rgba(85,127,145,1);
   border-radius: 0px 8px 8px 0;
-  width: 78vw;
-  padding: 9vw;
-  /* display: flex; */
+  width: 76vw;
+  padding: 20vh 12vw;
+  z-index: 1500;
+  /* height: 100vh; */
+  display: flex;
   flex-direction: column;
-  display: none;
 }
+/* .active body{
+  overflow: hidden;
+} */
 .close{
   position: absolute;
-  top: 10px;
-  right: 15px;
-  width: 40px;
-  height: 40px;
+  top: 55px;
+  right: 85px;
+  width: 50px;
+  height: 50px;
+}
+.close:hover{
+  opacity: 0.6;
 }
 .active{
   display: flex;
 }
 .burger-modal__link{
-  font-size: 20px;
-  padding-bottom: 15px;
-  padding-top: 15px;
+  font-size: 35px;
+  padding-bottom: 25px;
+  padding-top: 25px;
   text-align: center;
   color: rgba(210, 221, 226, 0.8);
   border-bottom: 1px solid  rgba(210, 221, 226, 0.8);
   transition: all 0.8s ease-in-out;
 }
+
 .burger-modal__link:hover{
   background-color: rgba(210, 221, 226, 0.8);
   color: black;
@@ -1155,6 +1163,9 @@ footer{
 } */
 .header-burger{
   display: none;
+}
+.header-burger{
+  z-index: 10000;
 }
 
 
