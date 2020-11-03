@@ -9,8 +9,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Mulish:wght@300&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/swiper-bundle.min.css" type="text/css">
-  <script
-  src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
   <script>
     $(document).ready(function(){
       $('.header-form__submenu-link--default').click(function(){
@@ -54,6 +53,17 @@
     });
 
   </script>
+  <!-- burger-menu -->
+  <script>
+    $(document).ready(function(){
+      $('.header-burger').click(function(){
+        $('.burger-modal').addClass('active');
+      });
+      $('.close').click(function(){
+        $('.burger-modal').removeClass('active');
+      })
+    })
+  </script>
   <!-- <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
 
   <script>
@@ -71,9 +81,17 @@
 <body>
   <main class="main">
     <header>
+      <div class="burger-modal ">
+        <a href="#" class="burger-modal__link">Home</a>
+        <a href="#" class="burger-modal__link">Destinations</a>
+        <a href="#" class="burger-modal__link">About</a>
+        <a href="#" class="burger-modal__link">Partner</a>
+        <a href="#"><img src="img/close.svg" alt="" class="close"></a>
+      </div>
       <div class="header-container">
         <div class="header__top header-top">
           <a href="#"><img src="img/logo.svg" alt="logo" class="header-top__logo"></a>
+          <a href="#"><img src="img/burger.svg" alt="" class="header-burger"></a>
           <div class="header-top__nav header-nav">
             <a href="#" class="header-nav__link header-nav__link--active">Home</a>
             <a href="#" class="header-nav__link">Destinations</a>
