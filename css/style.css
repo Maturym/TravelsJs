@@ -4,6 +4,17 @@ body{
   box-sizing: border-box;
   font-family: 'Inter', sans-serif;
 }
+::-webkit-scrollbar{
+  width: 15px;
+  background-color: rgba(85,127,145,0.2);
+}
+::-webkit-scrollbar-thumb{
+  background-color: rgb(231, 207, 207, 0.8);
+  border-radius: 4px;
+}
+::-webkit-scrollbar:hover{
+  background-color: rgba(85,127,145,0.5);
+}
 
 ul{
   padding: 0;
@@ -1119,7 +1130,9 @@ footer{
   position: fixed;
   top: 0;
   left: 0;
-  background-color: rgba(85,127,145,1);
+  /* background-color: rgba(85,127,145,1); */
+  background: rgb(238,174,202);
+  background: radial-gradient(circle, rgba(238,174,202,1) 0%, rgba(148,187,233,1) 100%);
   border-radius: 0px 8px 8px 0;
   width: 76vw;
   padding: 20vh 12vw;
@@ -1149,13 +1162,13 @@ footer{
   padding-bottom: 25px;
   padding-top: 25px;
   text-align: center;
-  color: rgba(210, 221, 226, 0.8);
-  border-bottom: 1px solid  rgba(210, 221, 226, 0.8);
+  color: rgba(27, 21, 27, 1);
+  border-bottom: 1px solid   rgba(27, 21, 27, 0.8);
   transition: all 0.8s ease-in-out;
 }
 
 .burger-modal__link:hover{
-  background-color: rgba(210, 221, 226, 0.8);
+  background-color:  rgba(27, 21, 27, 0.3);
   color: black;
 }
 /* .burger-modal__link + .burger-modal__link{
