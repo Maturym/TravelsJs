@@ -1576,18 +1576,18 @@ footer{
 
 @media (max-width: 321px) {
   body{
-    width: 320px;
+    width: 300px;
     margin: 0 auto;
   }
   .section3__bg{
-    width: 320px;
+    width: 300px;
   }
   footer{
     width: 100%;
     margin: 0;
   }
   .section1__bg{
-    width: 320px;
+    width: 300px;
   }
   .section4__circle--right{
     width: 34px;
@@ -1601,8 +1601,8 @@ footer{
   }
   .section5__cards{
     width: 300px;
-    padding-left: 10px;
-    padding-right: 10px;
+    padding-left: 0px;
+    padding-right: 0px;
   }
   .section5__card--link{
     width: 100%;
@@ -1611,7 +1611,7 @@ footer{
     text-align: center;
   }
   .section5__card{
-    min-width: 290px;
+    min-width: 300px;
     text-align: center;
   }
 }
