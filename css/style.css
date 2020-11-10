@@ -1346,6 +1346,9 @@ header{
   .section5__card{
     min-width: 290px;
   }
+  .section5__card--photo{
+    width: 290px;
+  }
 }
 /* end of section 5 */
 footer{
