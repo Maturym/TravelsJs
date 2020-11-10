@@ -17,12 +17,15 @@
       $('.header-form__submenu-link--default').click(function(){
         $(this).parent().toggleClass('active');
         activeMenu = $(this).parent();
+        $(document).width() > 480 ?  $(this).parent().css('box-shadow', '') :  $(this).parent().css('box-shadow', 'none');
+        // $(this).parent().css('box-shadow', 'none');
 
         $(document).mouseup(function (e){ // событие клика по веб-документу
           var div = activeMenu;// тут указываем ID элемента
 		      if (!div.is(e.target) // если клик был не по нашему блоку
 		        && div.has(e.target).length === 0) { // и не по его дочерним элементам
-			        activeMenu.removeClass('active')// скрываем его
+              activeMenu.removeClass('active');
+              $(this).parent().css('box-shadow', 'none');// скрываем его
 		   }
       });
 
@@ -31,6 +34,7 @@
         var parent = $(this).parent();
         parent.children('.header-form__submenu-link--default').html(currentele);
         $(this).parent().removeClass('active');
+        $(this).parent().css('box-shadow', 'none');
       });
 
 	});
