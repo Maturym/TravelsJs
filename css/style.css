@@ -1597,7 +1597,6 @@ footer{
   }
   .section5{
     display: flex;
-    border: 2px solid red;
   }
   .section5-container {
     margin-right: 0;
