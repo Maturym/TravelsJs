@@ -1596,7 +1596,7 @@ footer{
     right: -11px;
   }
   .section5{
-    display: none;
+    overflow-x: hidden;
   }
   .section5-container {
     margin-right: 0;
