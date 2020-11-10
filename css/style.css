@@ -1344,10 +1344,10 @@ header{
 
 @media (max-width: 369px) {
   .section5__card{
-    min-width: 290px;
+    width: 280px;
   }
   .section5__card--photo{
-    width: 290px;
+    width: 280px;
   }
 }
 /* end of section 5 */
